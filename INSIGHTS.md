@@ -5,7 +5,8 @@
   2. Ethan Gomez  – $8206.19
   3. Sophia Ahmed- $5471.57
   4. Lucas Hale - $4438.25
-  5. Emma Young - $4409.83 
+  5. Emma Young - $4409.83
+     
   These customers contribute a significant portion of total revenue, indicating a strong reliance on high-value customers.
 
 - The highest-spending customer, Jacob Foster, spent significantly more than others, suggesting a potential VIP customer who should be targeted for retention strategies.
