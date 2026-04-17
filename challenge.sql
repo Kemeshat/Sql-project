@@ -47,3 +47,18 @@ WHERE e.salary > (
     WHERE e3.department_id = e.department_id
 )
 ORDER BY d.name, e.salary DESC;
+
+
+-- TASK 4: Cities with the Most Gold Customers
+
+
+SELECT 
+    city,
+    SUM(CASE WHEN loyalty_level = 'Gold' THEN 1 ELSE 0 END) AS gold_count,
+    SUM(CASE WHEN loyalty_level = 'Silver' THEN 1 ELSE 0 END) AS silver_count,
+    SUM(CASE WHEN loyalty_level = 'Bronze' THEN 1 ELSE 0 END) AS bronze_count
+FROM customers
+GROUP BY city
+ORDER BY gold_count DESC;
+
+
