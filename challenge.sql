@@ -25,3 +25,25 @@ JOIN orders o
 GROUP BY p.category
 ORDER BY revenue DESC;
 
+
+-- TASK 3: Employees Earning Above Department Average
+
+SELECT 
+    e.first_name,
+    e.last_name,
+    d.name AS department_name,
+    e.salary,
+    (
+        SELECT AVG(e2.salary)
+        FROM employees e2
+        WHERE e2.department_id = e.department_id
+    ) AS department_avg
+FROM employees e
+JOIN departments d 
+    ON e.department_id = d.id
+WHERE e.salary > (
+    SELECT AVG(e3.salary)
+    FROM employees e3
+    WHERE e3.department_id = e.department_id
+)
+ORDER BY d.name, e.salary DESC;
