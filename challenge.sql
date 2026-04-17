@@ -10,3 +10,18 @@ FROM
 GROUP BY c.id, c.first_name, c.last_name
 ORDER BY lifetime_spend DESC
 LIMIT 5;
+
+
+-- TASK 2: Total Revenue by Product Category
+
+SELECT 
+    p.category,
+    SUM(oi.quantity * oi.unit_price) AS revenue
+FROM products p
+JOIN order_items oi 
+    ON p.id = oi.product_id
+JOIN orders o 
+    ON oi.order_id = o.id
+GROUP BY p.category
+ORDER BY revenue DESC;
+
